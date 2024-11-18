@@ -14,18 +14,11 @@ stdenv.mkDerivation {
 
   srcs = [
     (pkgs.fetchFromGitHub {
-      name = name;
       owner = "ponylang";
       repo = "pony-language-server";
       rev = "81135a7fb66d578549afdfb971b0cc8d07cca0a3";
       hash = "sha256-KGotqa4Y1xOWwGg64tfczSjPUcLOUj/eX5G1WONbjVk=";
       # fetchSubmodules = true;
-    })
-    (pkgs.fetchFromGitHub {
-      owner = "ponylang";
-      repo = "pony-language-server";
-      rev = "81135a7fb66d578549afdfb971b0cc8d07cca0a3";
-      hash = "sha256-KGotqa4Y1xOWwGg64tfczSjPUcLOUj/eX5G1WONbjVk=";
     })
     (pkgs.fetchFromGitHub {
       name = "peg";
@@ -59,7 +52,9 @@ stdenv.mkDerivation {
   sourceRoot = ".";
 
   prePatch = ''
-    cd ${name}
+    ls
+    pwd
+    cd source
   '';
 
   patches = [
@@ -73,6 +68,11 @@ stdenv.mkDerivation {
   ];
 
   buildPhase = ''
+    mkdir _corral
+    mv ../immutable-json _corral/github_com_mfelsche_pony_immutable_json
+    mv ../ast _corral/github_com_mfelsche_pony_ast
+    mv ../peg _corral/github_com_ponylang_peg
+    mv ../binarysearch _corral/github_com_mfelsche_pony_binarysearch
     make language_server
   '';
 
