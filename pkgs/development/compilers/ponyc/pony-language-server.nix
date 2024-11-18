@@ -79,6 +79,6 @@ stdenv.mkDerivation {
   installPhase = ''
     ls
     mkdir -p $out/bin
-    cp language_server $out/bin/pony_language_server
+    cp build/release/pony-lsp $out/bin/pony-lsp
   '';
 }
