@@ -68,8 +68,8 @@ stdenv.mkDerivation {
 
   nativeBuildInputs = [ ];
   buildInputs = [
-    # ponyc
-    # pony-corral
+    ponyc
+    pony-corral
   ];
 
   buildPhase = ''
