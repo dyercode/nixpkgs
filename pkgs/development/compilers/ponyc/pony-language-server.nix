@@ -12,7 +12,7 @@ stdenv.mkDerivation {
     owner = "ponylang";
     repo = "pony-language-server";
     rev = "81135a7fb66d578549afdfb971b0cc8d07cca0a3";
-    hash = "sha256-t7ljKKTm2WURO/m8y8ENpBOWZfDL0ssFcrhVVpro7xc=";
+    hash = "sha256-KGotqa4Y1xOWwGg64tfczSjPUcLOUj/eX5G1WONbjVk=";
     # fetchSubmodules = true;
   };
 

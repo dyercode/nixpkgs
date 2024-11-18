@@ -6919,6 +6919,7 @@ with pkgs;
   };
 
   pony-corral = callPackage ../development/compilers/ponyc/pony-corral.nix { };
+  pony-language-server = callPackage ../development/compilers/ponyc/pony-language-server.nix { };
 
   replibyte = callPackage ../development/tools/database/replibyte {
     inherit (darwin.apple_sdk.frameworks) Security SystemConfiguration;
